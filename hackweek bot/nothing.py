@@ -127,6 +127,29 @@ async def avatar(ctx, member: discord.Member = None):
 
 
 
+@bot.command()
+async def music_help(ctx):
+    author = ctx.message.author
+    embed = discord.Embed(
+        colour = discord.Colour.green()
+    ) 
+
+    embed.set_author(name="music help :", icon_url="https://cdn.discordapp.com/attachments/525781033241673729/545991739865956389/2019-02-15_09_35_52-Window.png")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/525781033241673729/545991739865956389/2019-02-15_09_35_52-Window.png")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/525781033241673729/545991739865956389/2019-02-15_09_35_52-Window.png")
+    embed.add_field(name="-->join", value="joins ur music channel", inline=True)
+    embed.add_field(name="-->leave", value="leaves ur music channel", inline=True)
+    embed.add_field(name="-->play {something}", value="plays music", inline=True)
+    embed.add_field(name="-->pause", value="pauses the music thats playing", inline=True)
+    embed.add_field(name="-->resume", value="continues playing the music after paused", inline=True)
+    embed.add_field(name="-->queue", value="shows the queue", inline=True) 
+    embed.add_field(name="-->current", value="shows the currently playing music", inline=True)
+    embed.add_field(name="-->skip", value="skips the music thats currently playing", inline=True)
+    await author.send(embed=embed)
+    await ctx.send("successfuly sent to ur dm")
+    emoji='👍'
+    for e in emoji:
+        await ctx.message.add_reaction(e)
 
 
 
